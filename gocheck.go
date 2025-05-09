@@ -12,13 +12,13 @@ import (
 	"testing"
 )
 
-func Equal[V string|int|int64|uint|float32|float64|bool](t *testing.T, exp_value V, got_value V) {
+func Equal[V comparable](t *testing.T, exp_value V, got_value V) {
 	if exp_value != got_value {
 		t.Errorf("Got %v // Exp %v", got_value, exp_value)
 	}
 }
 
-func EqualArr[V string|int|int64|uint|float32|float64|bool](t *testing.T, exp_value []V, got_value []V) {
+func EqualArr[V comparable](t *testing.T, exp_value []V, got_value []V) {
 	if len(exp_value) != len(got_value) {
 		t.Errorf("Got %#v // Exp %#v", got_value, exp_value)
 		return
