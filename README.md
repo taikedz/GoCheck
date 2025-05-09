@@ -22,7 +22,7 @@ Then run once one of the following:
 
 ```sh
 # To pin (preferred):
-go get github.com/taikedz/gocheck@v1.0.0
+go get github.com/taikedz/gocheck@v1.0.2
 
 # -- OR --
 
