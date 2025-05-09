@@ -31,3 +31,24 @@ func EqualArr[V comparable](t *testing.T, exp_value []V, got_value []V) {
 		}
 	}
 }
+
+
+func Different[V comparable](t *testing.T, exp_value V, got_value V) {
+	if exp_value == got_value {
+		t.Errorf("Got identical values: %v", got_value)
+	}
+}
+
+func DifferentArr[V comparable](t *testing.T, exp_value []V, got_value []V) {
+	if len(exp_value) != len(got_value) {
+		return
+	}
+
+	same := true
+	for i:=0; i<len(exp_value) && i<len(got_value); i++ {
+		same = same && exp_value[i] == got_value[i]
+	}
+	if same {
+		t.Errorf("Got identical arrays: %v", got_value)
+	}
+}
